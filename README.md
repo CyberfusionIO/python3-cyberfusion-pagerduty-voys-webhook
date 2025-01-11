@@ -80,7 +80,7 @@ backend bk_pagerduty_voys_webhook_server
 * Navigate to Admin -> Webhooks.
 * Click 'Add'.
 * For 'Name', fill in a free-form name.
-* For 'Caller id forwarding', select 'Suppress (privacy)'. This program does not use it, and the fewer data one sends, the better.
+* For 'Caller id forwarding', select whichever option suits your use case. This option controls which phone number the person sees who the call is routed to.
 * Set 'URL template' to: the URL on which this program runs + `/voys-webhook?secret_key=` + secret key (from `/etc/pagerduty-voys-webhook/secret_key`). For example: `https://voys-webhook.example.com/voys-webhook?secret_key=r6cZPVkZdqujY6dME5uqDytK`
 
 ### Use webhook in dial plan
