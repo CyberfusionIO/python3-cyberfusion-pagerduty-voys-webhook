@@ -1,0 +1,14 @@
+[Unit]
+Description=PagerDuty/Voys Webhook Server
+After=network.target
+
+[Service]
+User=pagerduty-voys-webhook
+Group=pagerduty-voys-webhook
+Environment=PORT=5839
+Environment=HOST=::
+ExecStart=/usr/bin/uvicorn --host $HOST --port $PORT cyberfusion.PagerDutyVoysWebhook.api:app
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
