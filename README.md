@@ -35,6 +35,8 @@ Run the following commands to build a Debian package:
 
 ## Run
 
+The webhook server runs on `:::5839`.
+
 ### Manually
 
 Run the app using an ASGI server such as Uvicorn.
@@ -42,6 +44,24 @@ Run the app using an ASGI server such as Uvicorn.
 ### systemd
 
     systemctl start pagerduty-voys-webhook-server.service
+
+## SSL
+
+Use a proxy that terminates SSL. E.g. [HAProxy](http://www.haproxy.org/).
+
+### Example HAProxy config
+
+```
+frontend fr_ssl
+  bind :::5840 v4v6 ssl crt /etc/ssl/certs/example_com.pem alpn h2,http/1.1 curves secp384r1:secp224r1
+  mode http
+  use_backend bk_pagerduty_voys_webhook_server
+
+backend bk_pagerduty_voys_webhook_server
+  mode http
+  balance source
+  server localhost ::1:5839 check
+```
 
 ## Configure
 
