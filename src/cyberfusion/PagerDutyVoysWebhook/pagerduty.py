@@ -1,5 +1,8 @@
 import requests
 import random
+import logging
+
+logger = logging.getLogger(__name__)
 
 BASE_URL = "https://api.pagerduty.com"
 
@@ -33,7 +36,11 @@ class PagerDutyAPI:
 
         request.raise_for_status()
 
-        return request.json()
+        json = request.json()
+
+        logger.debug("PagerDuty on-calls response: %s", json)
+
+        return json
 
     def get_random_on_call(self, escalation_policy_id: int) -> dict:
         """Get random on-call."""
@@ -51,7 +58,11 @@ class PagerDutyAPI:
 
         request.raise_for_status()
 
-        return request.json()
+        json = request.json()
+
+        logger.debug("PagerDuty contact methods response: %s", json)
+
+        return json
 
     def get_user_phone_contact_methods(self, user_id: str) -> list[dict]:
         """Get user phone contact methods."""
