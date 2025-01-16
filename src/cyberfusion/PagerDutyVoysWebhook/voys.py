@@ -6,6 +6,8 @@ Voys documentation: https://help.voys.nl/integraties-koppelingen-webhooks/webhoo
 import logging
 import urllib.parse
 
+logger = logging.getLogger(__name__)
+
 
 def construct_webhook_response_destination(destination: str) -> str:
     """Construct webhook response with destination."""
@@ -13,7 +15,7 @@ def construct_webhook_response_destination(destination: str) -> str:
 
     response = urllib.parse.urlencode(parameters)
 
-    logging.info("Webhook response: %s", response)
+    logger.info("Webhook response: %s", response)
 
     return response
 
@@ -24,6 +26,6 @@ def construct_webhook_response_wrong_input() -> str:
 
     response = urllib.parse.urlencode(parameters)
 
-    logging.info("Webhook response: %s", response)
+    logger.info("Webhook response: %s", response)
 
     return response
