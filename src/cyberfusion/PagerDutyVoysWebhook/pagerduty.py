@@ -43,10 +43,19 @@ class PagerDutyAPI:
         return json
 
     def get_random_on_call(self, escalation_policy_id: int) -> dict:
-        """Get random on-call."""
-        on_calls = self.get_on_calls(escalation_policy_id)
+        """Get random on-call.
 
-        on_call = random.choice(on_calls["oncalls"])
+        On-calls for escalation policies with a different level than 1 are ignored.
+        """
+        all_on_calls = self.get_on_calls(escalation_policy_id)
+
+        filtered_on_calls = [
+            on_call
+            for on_call in all_on_calls["oncalls"]
+            if on_call["escalation_level"] == 1
+        ]
+
+        on_call = random.choice(filtered_on_calls)
 
         return on_call
 
