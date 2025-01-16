@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+
 from cyberfusion.PagerDutyVoysWebhook.pagerduty import PagerDutyAPI
 from cyberfusion.PagerDutyVoysWebhook.settings import settings
 from cyberfusion.PagerDutyVoysWebhook.voys import (
