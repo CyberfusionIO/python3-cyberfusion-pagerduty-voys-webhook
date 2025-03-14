@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "python3-cyberfusion-pagerduty-voys-webhook"
-version = "1.0.1"
+version = "1.1"
 description = "Webhook server to dynamically route Voys calls to on-call PagerDuty users."
 readme = "README.md"
 authors = [
