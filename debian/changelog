@@ -1,3 +1,9 @@
+python3-cyberfusion-pagerduty-voys-webhook (1.1.1) unstable; urgency=low
+
+  - Print debug logs to stdout
+
+ -- William Edwards <wedwards@cyberfusion.nl>  Wed, 09 Apr 2025 13:31:00 +0100
+
 python3-cyberfusion-pagerduty-voys-webhook (1.1) unstable; urgency=low
 
   - Log Voys webhook response
