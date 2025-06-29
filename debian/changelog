@@ -1,3 +1,9 @@
+python3-cyberfusion-pagerduty-voys-webhook (1.1.2) unstable; urgency=medium
+
+  * Use compat level 14
+
+ -- William Edwards <wedwards@cyberfusion.nl>  Sun, 29 Jun 2025 14:40:29 +0000
+
 python3-cyberfusion-pagerduty-voys-webhook (1.1.1) unstable; urgency=low
 
   - Print debug logs to stdout
