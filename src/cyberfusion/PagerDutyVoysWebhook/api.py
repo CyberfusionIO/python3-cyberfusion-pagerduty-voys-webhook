@@ -11,7 +11,7 @@ from fastapi.responses import PlainTextResponse
 app = FastAPI()
 
 
-@app.get("/voys-webhook", response_class=PlainTextResponse)  # type: ignore[misc]
+@app.get("/voys-webhook", response_class=PlainTextResponse)  # type: ignore[untyped-decorator]
 def voys_webhook(secret_key: str) -> PlainTextResponse:
     """Return destination in Voys' webhook format."""
     if secret_key != settings.secret_key:
