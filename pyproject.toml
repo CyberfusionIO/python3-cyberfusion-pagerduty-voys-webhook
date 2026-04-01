@@ -11,7 +11,7 @@ authors = [
     { name = "Cyberfusion", email = "support@cyberfusion.io" },
 ]
 dependencies = [
-    "fastapi==0.135.2",
+    "fastapi==0.135.3",
     "requests==2.33.1",
     "pydantic-settings==2.13.1",
 ]
